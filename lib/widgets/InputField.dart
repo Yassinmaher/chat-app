@@ -5,12 +5,14 @@ class InputField extends StatefulWidget {
   final String hintText;
   final bool isPassword;
   final TextInputType inputType;
+  final TextInputAction inputAction;
 
   const InputField({
     Key? key,
     required this.validator,
     required this.hintText,
     required this.inputType,
+    required this.inputAction,
     this.isPassword = false,
   }) : super(key: key);
 
@@ -26,6 +28,7 @@ class _InputFieldState extends State<InputField> {
     return TextFormField(
       validator: (value) => widget.validator(value),
       keyboardType: widget.inputType,
+      textInputAction: widget.inputAction,
       obscureText: widget.isPassword && !isPasswordVisible,
       decoration: InputDecoration(
         hintText: widget.hintText,

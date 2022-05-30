@@ -41,6 +41,7 @@ class Register extends StatelessWidget {
                         },
                         hintText: 'Name',
                         inputType: TextInputType.name,
+                        inputAction: TextInputAction.next,
                       ),
                       const SizedBox(
                         height: 10.0,
@@ -54,6 +55,7 @@ class Register extends StatelessWidget {
                         },
                         hintText: 'Email',
                         inputType: TextInputType.emailAddress,
+                        inputAction: TextInputAction.next,
                       ),
                       const SizedBox(
                         height: 10.0,
@@ -68,6 +70,7 @@ class Register extends StatelessWidget {
                         hintText: 'Password',
                         isPassword: true,
                         inputType: TextInputType.visiblePassword,
+                        inputAction: TextInputAction.next,
                       ),
                       const SizedBox(
                         height: 10.0,
@@ -82,6 +85,7 @@ class Register extends StatelessWidget {
                         hintText: 'Confirm Password',
                         isPassword: true,
                         inputType: TextInputType.visiblePassword,
+                        inputAction: TextInputAction.done,
                       ),
                       const SizedBox(
                         height: 10.0,
