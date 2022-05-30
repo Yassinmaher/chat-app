@@ -1,3 +1,4 @@
+import 'package:chat_app/screens/sign_in_screen.dart';
 import 'package:chat_app/widgets/InputField.dart';
 import 'package:flutter/material.dart';
 
@@ -103,7 +104,14 @@ class Register extends StatelessWidget {
                         },
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SignIn(),
+                            ),
+                          );
+                        },
                         child: const Text(
                           'Already Have An Account? Sign in here',
                           style: TextStyle(

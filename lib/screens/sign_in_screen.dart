@@ -1,3 +1,4 @@
+import 'package:chat_app/screens/register_screen.dart';
 import 'package:chat_app/widgets/InputField.dart';
 import 'package:flutter/material.dart';
 
@@ -109,6 +110,24 @@ class _SignInState extends State<SignIn> {
                             );
                           }
                         },
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Register(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'Don\'t Have An Account? Register here',
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                            fontStyle: FontStyle.italic,
+                            fontSize: 12.0,
+                          ),
+                        ),
                       ),
                     ],
                   ),
