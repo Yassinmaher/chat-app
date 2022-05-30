@@ -1,6 +1,8 @@
 import 'package:chat_app/widgets/InputField.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/FormButton.dart';
+
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
 
@@ -10,7 +12,6 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   final _formKey = GlobalKey<FormState>();
-  bool _isPasswordVisible = false;
   bool _isRememberMeChecked = false;
 
   @override
@@ -32,97 +33,85 @@ class _SignInState extends State<SignIn> {
               ),
             ),
             Form(
-                key: _formKey,
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    children: [
-                      InputField(
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Email field is required';
-                          }
-                          return null;
-                        },
-                        hintText: 'Email',
-                        inputType: TextInputType.emailAddress,
-                      ),
-                      const SizedBox(
-                        height: 10.0,
-                      ),
-                      InputField(
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Password field is required';
-                          }
-                          return null;
-                        },
-                        hintText: 'Password',
-                        isPassword: true,
-                        inputType: TextInputType.visiblePassword,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              Checkbox(
-                                value: _isRememberMeChecked,
-                                side: const BorderSide(
-                                  color: Colors.white60,
-                                ),
-                                activeColor: Colors.white60,
-                                onChanged: (value) {
-                                  setState(() {
-                                    _isRememberMeChecked = value!;
-                                  });
-                                },
+              key: _formKey,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  children: [
+                    InputField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Email field is required';
+                        }
+                        return null;
+                      },
+                      hintText: 'Email',
+                      inputType: TextInputType.emailAddress,
+                    ),
+                    const SizedBox(
+                      height: 10.0,
+                    ),
+                    InputField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Password field is required';
+                        }
+                        return null;
+                      },
+                      hintText: 'Password',
+                      isPassword: true,
+                      inputType: TextInputType.visiblePassword,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: _isRememberMeChecked,
+                              side: const BorderSide(
+                                color: Colors.white60,
                               ),
-                              const Text('Remember Me'),
-                            ],
-                          ),
-                          TextButton(
-                            onPressed: () {},
-                            child: const Text(
-                              'Forgot Your Password',
-                              style: TextStyle(
-                                decoration: TextDecoration.underline,
-                              ),
+                              activeColor: Colors.white60,
+                              onChanged: (value) {
+                                setState(() {
+                                  _isRememberMeChecked = value!;
+                                });
+                              },
                             ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 5.0,
-                      ),
-                      Container(
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Colors.black54,
-                          borderRadius: BorderRadius.circular(10.0),
+                            const Text('Remember Me'),
+                          ],
                         ),
-                        child: MaterialButton(
-                          onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                  content: Text('Login in progress'),
-                                ),
-                              );
-                            }
-                          },
+                        TextButton(
+                          onPressed: () {},
                           child: const Text(
-                            'Login',
+                            'Forgot Your Password',
                             style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20.0,
+                              decoration: TextDecoration.underline,
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                )),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 5.0,
+                    ),
+                    FormButton(
+                      title: 'Login',
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Login in progress'),
+                            ),
+                          );
+                        }
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
