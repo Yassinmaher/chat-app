@@ -1,4 +1,4 @@
-import 'package:chat_app/screens/sign_in_screen.dart';
+import 'package:chat_app/screens/register.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
             ),
         hintColor: Colors.white60,
       ),
-      home: SignIn(),
+      home: Register(),
     );
   }
 }
