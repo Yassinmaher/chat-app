@@ -1,3 +1,4 @@
+import 'package:chat_app/screens/password_reset_screen.dart';
 import 'package:chat_app/screens/register_screen.dart';
 import 'package:chat_app/widgets/InputField.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,6 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(23, 27, 35, 1.0),
       body: Center(
         child: SingleChildScrollView(
           reverse: true,
@@ -86,7 +86,14 @@ class _SignInState extends State<SignIn> {
                             ],
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => PasswordReset(),
+                                ),
+                              );
+                            },
                             child: const Text(
                               'Forgot Your Password',
                               style: TextStyle(

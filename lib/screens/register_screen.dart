@@ -12,7 +12,6 @@ class Register extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(23, 27, 35, 1.0),
       body: Center(
         child: SingleChildScrollView(
           reverse: true,

@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
               displayColor: Colors.white60,
             ),
         hintColor: Colors.white60,
+        scaffoldBackgroundColor: const Color.fromRGBO(23, 27, 35, 1.0),
       ),
       home: Register(),
     );
