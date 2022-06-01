@@ -1,4 +1,4 @@
-import 'package:chat_app/screens/register_screen.dart';
+import 'package:chat_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,7 +23,9 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        appBarTheme: const AppBarTheme(
+          color: Color.fromRGBO(41, 47, 63, 1),
+        ),
         textTheme: Theme.of(context).textTheme.apply(
               bodyColor: Colors.white60,
               displayColor: Colors.white60,
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
         hintColor: Colors.white60,
         scaffoldBackgroundColor: const Color.fromRGBO(23, 27, 35, 1.0),
       ),
-      home: Register(),
+      home: const HomeScreen(),
     );
   }
 }
