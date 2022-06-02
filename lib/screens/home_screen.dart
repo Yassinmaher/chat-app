@@ -1,6 +1,8 @@
 import 'package:chat_app/screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/message.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -48,11 +50,11 @@ class HomeScreen extends StatelessWidget {
               ))
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Container(
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
               height: 40,
               decoration: BoxDecoration(
                 color: const Color.fromRGBO(0, 0, 0, 0.25),
@@ -92,11 +94,23 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            // ListView(
-            //   children: const [Card()],
-            // )
-          ],
-        ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                return const Message(
+                  profilePath: 'assets/images/profile_image.jpg',
+                  name: 'Yassin Maher',
+                  message: 'How are you? Iam yassin maher flutter developer',
+                  time: '10:00 AM',
+                  status: Status.read,
+                );
+              },
+              itemCount: 100,
+            ),
+          ),
+        ],
       ),
     );
   }
