@@ -1,3 +1,4 @@
+import 'package:chat_app/screens/home_screen.dart';
 import 'package:chat_app/screens/password_reset_screen.dart';
 import 'package:chat_app/screens/register_screen.dart';
 import 'package:chat_app/widgets/InputField.dart';
@@ -110,9 +111,10 @@ class _SignInState extends State<SignIn> {
                         title: 'Login',
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text('Login in progress'),
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HomeScreen(),
                               ),
                             );
                           }

@@ -1,4 +1,4 @@
-import 'package:chat_app/screens/home_screen.dart';
+import 'package:chat_app/screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         hintColor: Colors.white60,
         scaffoldBackgroundColor: const Color.fromRGBO(23, 27, 35, 1.0),
       ),
-      home: const HomeScreen(),
+      home: const SignIn(),
     );
   }
 }

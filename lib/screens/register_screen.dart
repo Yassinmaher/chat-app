@@ -94,9 +94,10 @@ class Register extends StatelessWidget {
                         title: 'Register',
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text('Register in progress'),
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SignIn(),
                               ),
                             );
                           }

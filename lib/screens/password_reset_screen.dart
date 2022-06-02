@@ -1,3 +1,4 @@
+import 'package:chat_app/screens/sign_in_screen.dart';
 import 'package:chat_app/widgets/InputField.dart';
 import 'package:flutter/material.dart';
 
@@ -49,9 +50,10 @@ class PasswordReset extends StatelessWidget {
                         title: 'Send Email',
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text('Sending Email is in progress'),
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const SignIn(),
                               ),
                             );
                           }
